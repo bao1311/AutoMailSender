@@ -86,6 +86,8 @@ def gmail_send_message(sender,receiver):
 
 
 if __name__ == "__main__":
+  sender = "sender@gmail.com"
+  receiver = "receiver@gmail.com"
   for i in range(100):
     gmail_send_message()
 # [END gmail_send_message]
