@@ -1,0 +1,6 @@
+# Ignore env file
+myvenv
+
+# Ignore json file include private key
+*.json
+

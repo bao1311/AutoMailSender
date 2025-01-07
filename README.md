@@ -1,0 +1,1 @@
+Automation Mail sender project
