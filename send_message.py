@@ -88,6 +88,8 @@ def gmail_send_message(sender,receiver):
   return send_message
 
 
+#def send_cold_email_to_leads(sender, receiver):
+
 if __name__ == "__main__":
   sender = "baoasulib@gmail.com"
   receiver = "maithy720@gmail.com"
