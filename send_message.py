@@ -15,6 +15,7 @@ limitations under the License.
 import base64
 from email.message import EmailMessage
 import os.path
+import threading
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -28,6 +29,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
+counter = 0
 def gmail_send_message(sender,receiver):
   """Create and send an email message
   Print the returned  message id
@@ -37,7 +39,7 @@ def gmail_send_message(sender,receiver):
   TODO(developer) - See https://developers.google.com/identity
   for guides on implementing OAuth2 for the application.
   """
-
+  global counter
   creds = None
   # The file token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
@@ -61,8 +63,9 @@ def gmail_send_message(sender,receiver):
     service = build("gmail", "v1", credentials=creds)
     message = EmailMessage()
 
-    message.set_content("I miss you so much hix hix. Luv u")
-
+    message.set_content("I miss you so much hix hix. Luv u times: " + str(counter))
+    counter += 1
+    print('counter ',counter)
     message["To"] = receiver
     message["From"] = sender
     message["Subject"] = "Xin gui con ghe thui beo"
@@ -86,8 +89,11 @@ def gmail_send_message(sender,receiver):
 
 
 if __name__ == "__main__":
-  sender = "sender@gmail.com"
-  receiver = "receiver@gmail.com"
+  sender = "baoasulib@gmail.com"
+  receiver = "maithy720@gmail.com"
   for i in range(100):
-    gmail_send_message()
+
+    t = threading.Thread(target=gmail_send_message,args=(sender,receiver))
+    t.start()
+  
 # [END gmail_send_message]
