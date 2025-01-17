@@ -1,0 +1,9 @@
+Hey {{contact.first_name}}, just wanted to make sure you saw this,
+
+I hope this message finds you well.
+
+I am Bao, a junior majoring in Computer Science at ASU. I have actively contributed to open-source projects and participated in various lab initiatives.
+
+I have developed strong skills in object-oriented programming, the MERN stack, and architectural frameworks such as ePMP, which I am currently applying in my lab work. Based on my research on {{account.name}}, I believe my experience could be valuable to your team. I have attached my resume for your review to assess whether I would be a good fit for your team.
+
+I would welcome the opportunity to discuss how I can contribute to {{account.name}}. Please let me know if we can arrange a time to connect.
